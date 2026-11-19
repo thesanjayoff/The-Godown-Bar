@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&family=Poppins:wght@300;400;500&display=swap');
+
+.page{
+  min-height:100vh;
+  background:#000;
+  color:#f3ead9;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:48px 24px;
+  font-family:'Poppins',sans-serif;
+  text-align:center;
+}
+
+.logo{
+  width:170px;
+  height:auto;
+  margin-bottom:28px;
+}
+
+.heading{
+  font-family:'Oswald',sans-serif;
+  font-weight:500;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  font-size:.95rem;
+  color:#b89e78;
+  margin:0 0 36px;
+}
+
+.menuList{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+  width:100%;
+  max-width:320px;
+}
+
+.menuLink{
+  display:block;
+  padding:18px 20px;
+  border:1px solid rgba(184,158,120,.5);
+  color:#f3ead9;
+  text-decoration:none;
+  font-family:'Oswald',sans-serif;
+  font-weight:500;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  font-size:1rem;
+  transition:background .2s ease, color .2s ease, border-color .2s ease;
+}
+
+.menuLink:hover{
+  background:#b89e78;
+  color:#000;
+  border-color:#b89e78;
+}
+
+.adminWrap{
+  margin-top:56px;
+}
+
+.adminLink{
+  color:rgba(243,234,217,.4);
+  text-decoration:none;
+  font-size:.75rem;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  border-bottom:1px solid rgba(243,234,217,.25);
+  padding-bottom:2px;
+  transition:color .2s ease, border-color .2s ease;
+}
+
+.adminLink:hover{
+  color:rgba(243,234,217,.8);
+  border-color:rgba(243,234,217,.6);
+}

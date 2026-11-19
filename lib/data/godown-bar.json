@@ -1,0 +1,1113 @@
+{
+  "restaurantName": "The Godown Bar",
+  "address": "42, Thanikachalam Road, T Nagar, Chennai 600017",
+  "tabs": [
+    {
+      "key": "drinks",
+      "label": "DRINKS",
+      "coverTitle": "Cheers",
+      "coverSub": "B A R   M E N U",
+      "theme": "dark",
+      "categories": [
+        {
+          "key": "spirits",
+          "label": "Imported Spirits",
+          "items": [
+            {
+              "groupLabel": "Aperitifs"
+            },
+            {
+              "name": "Campari",
+              "price": "₹525"
+            },
+            {
+              "name": "Martini Extra Dry / Bianco",
+              "price": "₹350"
+            },
+            {
+              "name": "Martini Rosso",
+              "price": "₹350"
+            },
+            {
+              "name": "Ricard",
+              "price": "₹350"
+            },
+            {
+              "groupLabel": "Scotch Whisky Single Malt"
+            },
+            {
+              "name": "Glenfiddich 15 Yrs",
+              "price": "₹850"
+            },
+            {
+              "name": "Dalwhinnie 15 Yrs",
+              "price": "₹550"
+            },
+            {
+              "name": "Glenmorangie 10 Yrs",
+              "price": "₹475"
+            },
+            {
+              "name": "Glenfiddich 12 Yrs",
+              "price": "₹500"
+            },
+            {
+              "name": "Laphroaig 10 Yrs",
+              "price": "₹500"
+            },
+            {
+              "name": "Talisker",
+              "price": "₹500"
+            },
+            {
+              "name": "Caol Ila 12 Yrs",
+              "price": "₹450"
+            },
+            {
+              "name": "Singleton Glendullan",
+              "price": "₹500"
+            },
+            {
+              "name": "Glenlivet",
+              "price": "₹500"
+            },
+            {
+              "name": "Glenlivet 18 Yrs",
+              "price": "₹1250"
+            },
+            {
+              "name": "Cragganmore 12 Yrs",
+              "price": "₹450"
+            },
+            {
+              "name": "Dalmore",
+              "price": "₹1300"
+            },
+            {
+              "groupLabel": "Blended Malt Deluxe"
+            },
+            {
+              "name": "Royal Salute",
+              "price": "₹1700"
+            },
+            {
+              "name": "JW Blue",
+              "price": "₹1700"
+            },
+            {
+              "name": "JW Platinum",
+              "price": "₹750"
+            },
+            {
+              "name": "Chivas Regal 18 Yrs",
+              "price": "₹750"
+            },
+            {
+              "name": "Chivas Regal 15 Yrs",
+              "price": "₹600"
+            },
+            {
+              "name": "JW Gold Reserve",
+              "price": "₹600"
+            },
+            {
+              "name": "Monkey Shoulder",
+              "price": "₹600"
+            },
+            {
+              "name": "Makers Mark",
+              "price": "₹600"
+            },
+            {
+              "groupLabel": "Premium Whisky"
+            },
+            {
+              "name": "JW Double Black",
+              "price": "₹500"
+            },
+            {
+              "name": "JW Black Label",
+              "price": "₹450"
+            },
+            {
+              "name": "Chivas Regal 12 Yrs",
+              "price": "₹450"
+            },
+            {
+              "name": "Ballantine's 12 Yrs",
+              "price": "₹450"
+            },
+            {
+              "name": "Dewar's White Label 15 Yrs",
+              "price": "₹600"
+            },
+            {
+              "groupLabel": "Regular Whisky"
+            },
+            {
+              "name": "Grants Select Reserve / Triplewood",
+              "price": "₹325"
+            },
+            {
+              "name": "JW Red Label",
+              "price": "₹350"
+            },
+            {
+              "name": "Fort Glen",
+              "price": "₹300"
+            },
+            {
+              "name": "J&B Rare",
+              "price": "₹300"
+            },
+            {
+              "name": "Dewar's White Label",
+              "price": "₹300"
+            },
+            {
+              "name": "Ballantine's Finest",
+              "price": "₹300"
+            },
+            {
+              "name": "Mr. Jack 21",
+              "price": "₹300"
+            },
+            {
+              "name": "Black & White / Teacher's",
+              "price": "₹350"
+            },
+            {
+              "name": "100 Pipers",
+              "price": "₹350"
+            },
+            {
+              "name": "VAT 69",
+              "price": "₹350"
+            },
+            {
+              "groupLabel": "Japanese Whisky"
+            },
+            {
+              "name": "Suntory Toki",
+              "price": "₹550"
+            },
+            {
+              "name": "Hibiki",
+              "price": "₹2500"
+            },
+            {
+              "groupLabel": "Irish Whiskey"
+            },
+            {
+              "name": "Jameson Cask Mates Stout",
+              "price": "₹350"
+            },
+            {
+              "name": "Jameson Cask Mates",
+              "price": "₹350"
+            },
+            {
+              "name": "Jameson Triple Distilled",
+              "price": "₹450"
+            },
+            {
+              "groupLabel": "Canadian Whisky"
+            },
+            {
+              "name": "Canadian Club",
+              "price": "₹300"
+            },
+            {
+              "groupLabel": "American Whiskey"
+            },
+            {
+              "name": "Gentleman Jack",
+              "price": "₹650"
+            },
+            {
+              "name": "Jack Daniel's No.7 Tennessee",
+              "price": "₹450"
+            },
+            {
+              "name": "Jack Daniel's Honey / Green Apple",
+              "price": "₹450"
+            },
+            {
+              "name": "Jack Daniel's Fire",
+              "price": "₹450"
+            },
+            {
+              "name": "Jim Beam Black",
+              "price": "₹450"
+            },
+            {
+              "name": "Jim Beam",
+              "price": "₹400"
+            },
+            {
+              "groupLabel": "Vodka"
+            },
+            {
+              "name": "Grey Goose / Belvedere",
+              "price": "₹500"
+            },
+            {
+              "name": "Absolut Blue / Grapefruit",
+              "price": "₹325"
+            },
+            {
+              "name": "Absolut Raspberry / Mandrin / Citron",
+              "price": "₹325"
+            },
+            {
+              "name": "Haku Japanese",
+              "price": "₹750"
+            },
+            {
+              "name": "Skyy",
+              "price": "₹325"
+            },
+            {
+              "name": "Ketel One",
+              "price": "₹325"
+            },
+            {
+              "name": "Stoli Caramel",
+              "price": "₹325"
+            },
+            {
+              "name": "Smirnoff",
+              "price": "₹325"
+            },
+            {
+              "groupLabel": "Gin"
+            },
+            {
+              "name": "Roku",
+              "price": "₹550"
+            },
+            {
+              "name": "Hendricks",
+              "price": "₹450"
+            },
+            {
+              "name": "Bombay Sapphire / Tanqueray",
+              "price": "₹400"
+            },
+            {
+              "name": "Beefeater",
+              "price": "₹400"
+            },
+            {
+              "name": "Gordon's",
+              "price": "₹400"
+            },
+            {
+              "name": "Kingston",
+              "price": "₹350"
+            },
+            {
+              "groupLabel": "Tequila"
+            },
+            {
+              "name": "Patron XO Café",
+              "price": "₹750"
+            },
+            {
+              "name": "Jose Cuervo Gold",
+              "price": "₹500"
+            },
+            {
+              "name": "Camino Real Blanco",
+              "price": "₹500"
+            },
+            {
+              "name": "Sauza Silver",
+              "price": "₹500"
+            },
+            {
+              "name": "Don Angel",
+              "price": "₹500"
+            },
+            {
+              "groupLabel": "Rum"
+            },
+            {
+              "name": "Ron Lupe",
+              "price": "₹300"
+            },
+            {
+              "name": "Negrita Gold",
+              "price": "₹300"
+            },
+            {
+              "groupLabel": "Cognac"
+            },
+            {
+              "name": "Hennessey XO",
+              "price": "₹2200"
+            },
+            {
+              "name": "Martel XO",
+              "price": "₹2200"
+            },
+            {
+              "name": "Remy Martin VSOP",
+              "price": "₹650"
+            },
+            {
+              "name": "Martel VSOP",
+              "price": "₹650"
+            },
+            {
+              "name": "Hennessey VSOP",
+              "price": "₹650"
+            },
+            {
+              "name": "Martel VS",
+              "price": "₹450"
+            },
+            {
+              "name": "Hennessey VS",
+              "price": "₹450"
+            },
+            {
+              "name": "Bardinet VSOP",
+              "price": "₹350"
+            },
+            {
+              "name": "St Remy VS",
+              "price": "₹350"
+            }
+          ]
+        },
+        {
+          "key": "shooters",
+          "label": "Shooters & Liqueurs",
+          "items": [
+            {
+              "groupLabel": "Shooters"
+            },
+            {
+              "name": "Jager Bomb",
+              "desc": "Jagermeister & Redbull",
+              "price": "₹550 (1) / ₹2000 (4)"
+            },
+            {
+              "name": "B-52",
+              "desc": "Khalua, Cointreau & Bailey's",
+              "price": "₹500 (1) / ₹1800 (4)"
+            },
+            {
+              "name": "Kamakazi",
+              "desc": "Vodka, Triple Sec, Lime Juice",
+              "price": "₹400 (1) / ₹1500 (4)"
+            },
+            {
+              "name": "Knock Out",
+              "desc": "Tequila, Vodka, Lime Juice, Tobasco",
+              "price": "₹400 (1) / ₹1500 (4)"
+            },
+            {
+              "name": "Brain Hemorrhage",
+              "desc": "Vodka, Bailey's, Peach Liqueur, Granadine",
+              "price": "₹500 (1) / ₹1800 (4)"
+            },
+            {
+              "name": "Back Shots",
+              "desc": "Tequila, Vodka, Redbull",
+              "price": "₹500 (1) / ₹1800 (4)"
+            },
+            {
+              "groupLabel": "Liqueurs"
+            },
+            {
+              "name": "Absenta",
+              "price": "₹675"
+            },
+            {
+              "name": "Jagermeister",
+              "price": "₹500"
+            },
+            {
+              "name": "Sambuca",
+              "price": "₹400"
+            },
+            {
+              "name": "Bailey's",
+              "price": "₹500"
+            },
+            {
+              "name": "Khalua",
+              "price": "₹450"
+            },
+            {
+              "name": "Malibu",
+              "price": "₹400"
+            }
+          ]
+        },
+        {
+          "key": "wine",
+          "label": "Wine",
+          "items": [
+            {
+              "groupLabel": "Imported Wine — Red"
+            },
+            {
+              "name": "Jacob's Creek Cabernet Shiraz",
+              "price": "₹700 (glass) / ₹3250 (bottle)"
+            },
+            {
+              "name": "Two Oceans Shiraz",
+              "price": "₹700 (glass) / ₹3250 (bottle)"
+            },
+            {
+              "groupLabel": "Imported Wine — White"
+            },
+            {
+              "name": "Jacob's Creek Chardonnay",
+              "price": "₹700 (glass) / ₹3250 (bottle)"
+            },
+            {
+              "name": "Two Oceans Sauvignon Blanc",
+              "price": "₹700 (glass) / ₹3250 (bottle)"
+            },
+            {
+              "groupLabel": "Indian Wine — Sparkling"
+            },
+            {
+              "name": "Jacob's Creek Prosecco",
+              "price": "₹6000 (bottle)"
+            },
+            {
+              "name": "Sula Brut Tropicale",
+              "price": "₹4000 (bottle)"
+            },
+            {
+              "groupLabel": "Indian Wine — Red"
+            },
+            {
+              "name": "Sula Shiraz Cabernet",
+              "price": "₹625 (glass) / ₹3000 (bottle)"
+            },
+            {
+              "name": "Fratelli Cabernet Sauvignon",
+              "desc": "VAT 58%",
+              "price": "₹450 (glass) / ₹2000 (bottle)"
+            },
+            {
+              "name": "Fratelli Cabernet Merlo",
+              "desc": "VAT 58%",
+              "price": "₹450 (glass) / ₹2000 (bottle)"
+            },
+            {
+              "groupLabel": "Indian Wine — White"
+            },
+            {
+              "name": "Sula Sauvignon Blanc",
+              "price": "₹625 (glass) / ₹3000 (bottle)"
+            },
+            {
+              "name": "Sula Chenin Blanc",
+              "price": "₹625 (glass) / ₹3000 (bottle)"
+            },
+            {
+              "name": "Fratelli Chenin Blanc",
+              "desc": "VAT 58%",
+              "price": "₹450 (glass) / ₹2000 (bottle)"
+            }
+          ]
+        },
+        {
+          "key": "beer",
+          "label": "Beer",
+          "items": [
+            {
+              "groupLabel": "Imported Beer"
+            },
+            {
+              "name": "Hoegaarden / Pils / Brewdog",
+              "price": "₹550"
+            },
+            {
+              "name": "Apostel Weissbier 500ml",
+              "price": "₹850"
+            },
+            {
+              "name": "Ser Bhum Lager",
+              "price": "₹698"
+            },
+            {
+              "name": "Corona / Sol / Peroni",
+              "price": "₹550"
+            },
+            {
+              "name": "Heineken / Budweiser / Erdinger",
+              "price": "₹550"
+            },
+            {
+              "groupLabel": "Domestic Beer — Premium & Super Premium 650ml"
+            },
+            {
+              "name": "Kingfisher Magnum / Blue",
+              "price": "₹400"
+            },
+            {
+              "name": "Kingfisher Select",
+              "price": "₹400"
+            },
+            {
+              "name": "Carlsberg",
+              "price": "₹400"
+            },
+            {
+              "name": "British Empire",
+              "price": "₹400"
+            },
+            {
+              "name": "Tuborg",
+              "price": "₹400"
+            },
+            {
+              "name": "Amstel",
+              "price": "₹400"
+            },
+            {
+              "name": "Kingfisher Ultra Max",
+              "price": "₹450"
+            },
+            {
+              "name": "British Empire Malt",
+              "price": "₹450"
+            },
+            {
+              "name": "Fosters Strong",
+              "price": "₹450"
+            },
+            {
+              "name": "Fosters Malt",
+              "price": "₹450"
+            },
+            {
+              "groupLabel": "Premium Pint — 325ml"
+            },
+            {
+              "name": "Sterling Pint",
+              "price": "₹200"
+            },
+            {
+              "name": "Budweiser Magnum Ultra Pint",
+              "price": "₹200"
+            },
+            {
+              "name": "Kingfisher Pint",
+              "price": "₹200"
+            },
+            {
+              "groupLabel": "Draught Beer"
+            },
+            {
+              "name": "British Empire",
+              "price": "₹200 (mug) / ₹1750 (tower)"
+            }
+          ]
+        },
+        {
+          "key": "domestic-spirits",
+          "label": "Domestic Spirits",
+          "items": [
+            {
+              "groupLabel": "Whisky"
+            },
+            {
+              "name": "Antiquity Blue",
+              "price": "₹225"
+            },
+            {
+              "name": "Royal Challenge",
+              "price": "₹200"
+            },
+            {
+              "name": "Signature",
+              "price": "₹200"
+            },
+            {
+              "name": "1848 Grain Whisky",
+              "price": "₹200"
+            },
+            {
+              "groupLabel": "Rum"
+            },
+            {
+              "name": "Bacardi White / Black / Lemon",
+              "price": "₹200"
+            },
+            {
+              "name": "Old Monk / Reserve",
+              "price": "₹200"
+            },
+            {
+              "groupLabel": "Vodka"
+            },
+            {
+              "name": "Juno Pink / Orange",
+              "price": "₹225"
+            },
+            {
+              "name": "Eristoff",
+              "price": "₹225"
+            },
+            {
+              "groupLabel": "Brandy"
+            },
+            {
+              "name": "Morpheus XO",
+              "price": "₹200"
+            },
+            {
+              "name": "Morpheus XO Blue",
+              "price": "₹250"
+            },
+            {
+              "name": "Louis Vernant XO / British Empire XO",
+              "price": "₹200"
+            },
+            {
+              "name": "1848 XO / King Louis XO / Morpheus XO",
+              "price": "₹200"
+            }
+          ]
+        },
+        {
+          "key": "cocktails",
+          "label": "Cocktails",
+          "items": [
+            {
+              "name": "Martini",
+              "desc": "Gin and Vermouth",
+              "price": "₹600"
+            },
+            {
+              "name": "Daiquiri",
+              "desc": "Rum, Lime Juice, Simple Syrup",
+              "price": "₹600"
+            },
+            {
+              "name": "Sangria (Red / White)",
+              "desc": "Red/White Wine, Brandy, Triple Sec, Fresh Lime, Orange, Pineapple Juice",
+              "price": "₹600"
+            },
+            {
+              "name": "Margarita",
+              "desc": "Tequila, Triple Sec, Lime Juice",
+              "price": "₹600"
+            },
+            {
+              "name": "Mojito",
+              "desc": "White Rum, Fresh Mint, Fresh Lime, Sugar",
+              "price": "₹600"
+            },
+            {
+              "name": "Cosmopolitan",
+              "desc": "Vodka, Triple Sec, Cranberry Juice, Lime Juice",
+              "price": "₹600"
+            },
+            {
+              "name": "Pina Colada",
+              "desc": "White Rum, Coconut Rum, Pineapple Juice, Fresh Cream",
+              "price": "₹600"
+            },
+            {
+              "name": "Tequila Sunrise",
+              "desc": "Tequila, Lime Juice, Orange Juice, Granadine Syrup",
+              "price": "₹650"
+            },
+            {
+              "name": "LIIT",
+              "desc": "Vodka, Gin, Tequila, Rum, Triple Sec, Fresh Lime Juice, Coke",
+              "price": "₹900"
+            },
+            {
+              "name": "Jet LIIT",
+              "desc": "Vodka, Rum, Gin, Tequila, Triple Sec, Fresh Lime Juice, Red Bull",
+              "price": "₹1050"
+            },
+            {
+              "name": "Tokio Iced Tea",
+              "desc": "Vodka, Rum, Gin, Tequila, Triple Sec, Fresh Lime Juice, Kiwi Crush",
+              "price": "₹1050"
+            },
+            {
+              "name": "Beer Iced Tea",
+              "desc": "Iced Tea, Beer, Lime Juice",
+              "price": "₹1200"
+            },
+            {
+              "name": "Sex on the Beach",
+              "desc": "Vodka, Peach Schnapps, Orange Juice, Cranberry Juice",
+              "price": "₹600"
+            },
+            {
+              "name": "Whisky Sour",
+              "desc": "Whisky, Fresh Lime, Simple Syrup",
+              "price": "₹600"
+            },
+            {
+              "name": "Grandma Remedies",
+              "desc": "Brandy, Ginger, Spices, Honey Hot Water",
+              "price": "₹600"
+            },
+            {
+              "name": "Black Russian",
+              "desc": "Vodka, Coffee Liqueur",
+              "price": "₹700"
+            }
+          ]
+        },
+        {
+          "key": "mocktails",
+          "label": "Mocktails & Soft",
+          "items": [
+            {
+              "groupLabel": "Mocktails — ₹350 each"
+            },
+            {
+              "name": "Curry Leaf Mojito",
+              "desc": "Curry Leaves, Lime Juice, Sugar Syrup, Soda, Mint Leaves"
+            },
+            {
+              "name": "Nairobi Night",
+              "desc": "Litchi Juice, Fresh Cream & Blue Curacao"
+            },
+            {
+              "name": "Fizzy Kiwi",
+              "desc": "Kiwi Pulp, Lime Juice, Sugar Syrup, Soda"
+            },
+            {
+              "name": "Banana Pina Colada",
+              "desc": "Banana, Pineapple Juice, Coconut Cream"
+            },
+            {
+              "name": "Mango Delight",
+              "desc": "Mango Pulp, Orange Juice, Lime Juice, Sugar Syrup"
+            },
+            {
+              "name": "Virgin Mojito",
+              "desc": "Mint Leaves, Lime Juice, Sugar Syrup, Soda"
+            },
+            {
+              "groupLabel": "Soft Beverages"
+            },
+            {
+              "name": "Redbull",
+              "price": "₹350"
+            },
+            {
+              "name": "Tonic Water / Ginger Ale",
+              "price": "₹200"
+            },
+            {
+              "name": "Sparkling Water",
+              "price": "₹150"
+            },
+            {
+              "name": "Diet Pepsi / Coke",
+              "price": "₹150"
+            },
+            {
+              "name": "Seasonal Fresh Juice",
+              "price": "₹200"
+            },
+            {
+              "name": "Fresh Lime Soda / Water",
+              "price": "₹150"
+            },
+            {
+              "name": "Canned Juice",
+              "price": "₹150"
+            },
+            {
+              "name": "Aerated Drink",
+              "price": "₹120"
+            },
+            {
+              "name": "Bottled Water (500ml)",
+              "price": "₹50"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "food",
+      "label": "FOOD",
+      "coverTitle": "Bon Appétit",
+      "coverSub": "F O O D   M E N U",
+      "theme": "light",
+      "categories": [
+        {
+          "key": "veg",
+          "label": "Veggie & Vegans",
+          "items": [
+            {
+              "name": "Cheese & Corn Nuggets",
+              "price": "₹300"
+            },
+            {
+              "name": "Nachos with Cheese & Salsa",
+              "price": "₹300"
+            },
+            {
+              "name": "Breaded Onion Rings with Mayo",
+              "price": "₹300"
+            },
+            {
+              "name": "Honey Chilli Potato",
+              "price": "₹330"
+            },
+            {
+              "name": "BBQ Cottage Cheese Satay",
+              "price": "₹380"
+            },
+            {
+              "name": "Wok Tossed Chilly",
+              "variant": "(Paneer / Babycorn / Cauliflower)",
+              "price": "₹380 / ₹330 / ₹300"
+            },
+            {
+              "name": "Salt & Pepper",
+              "variant": "(Baby Corn / Mushroom)",
+              "price": "₹330 / ₹350"
+            },
+            {
+              "name": "Minted Paneer Tikka",
+              "price": "₹380"
+            },
+            {
+              "name": "Subz Cashew Seekh Kebab",
+              "price": "₹350"
+            },
+            {
+              "name": "Onion Pakoda",
+              "price": "₹250"
+            },
+            {
+              "name": "French Fries",
+              "variant": "(Regular / Peri Peri)",
+              "price": "₹220 / ₹250"
+            },
+            {
+              "name": "Garlic Bread",
+              "variant": "(Regular / Cheese)",
+              "price": "₹250 / ₹330"
+            },
+            {
+              "name": "Chilli Cheese Toast",
+              "price": "₹330"
+            },
+            {
+              "name": "Makka Cholam Varuval",
+              "price": "₹300"
+            },
+            {
+              "name": "Idly – Cocktail / Podi",
+              "price": "₹300"
+            },
+            {
+              "name": "Cocktail Vada",
+              "price": "₹300"
+            },
+            {
+              "name": "Peanut Masala",
+              "price": "₹250"
+            },
+            {
+              "name": "Cheese, Cherry & Pineapple",
+              "price": "₹300"
+            }
+          ]
+        },
+        {
+          "key": "meat",
+          "label": "Something Fishy, Something Meaty",
+          "items": [
+            {
+              "name": "Fish Fingers with Garlic Mayo",
+              "price": "₹450"
+            },
+            {
+              "name": "Calamari Fritters with Tartar Sauce",
+              "price": "₹460"
+            },
+            {
+              "name": "Shrimps Basket with Tartar Sauce",
+              "price": "₹460"
+            },
+            {
+              "name": "Butterfly Shrimps with Garlic Mayo",
+              "price": "₹460"
+            },
+            {
+              "name": "BBQ Buffalo Wings",
+              "price": "₹390"
+            },
+            {
+              "name": "Flaky Fried Chicken",
+              "price": "₹400"
+            },
+            {
+              "name": "Dong Tao Chicken",
+              "price": "₹390"
+            },
+            {
+              "name": "Wok Tossed Chilly",
+              "variant": "(Chicken / Fish / Prawns)",
+              "price": "₹390 / ₹450 / ₹460"
+            },
+            {
+              "name": "Salt & Pepper",
+              "variant": "(Chicken / Fish / Prawns)",
+              "price": "₹390 / ₹450 / ₹460"
+            },
+            {
+              "name": "Shredded Beef Bell Pepper",
+              "price": "₹480"
+            },
+            {
+              "name": "Chilly Beef",
+              "price": "₹450"
+            },
+            {
+              "name": "Chilly Egg",
+              "price": "₹360"
+            },
+            {
+              "name": "Minted",
+              "variant": "(Chicken / Fish / Prawns)",
+              "price": "₹390 / ₹450 / ₹460"
+            },
+            {
+              "name": "Malai / Achari Murgh Tikka",
+              "price": "₹390"
+            },
+            {
+              "name": "Tandoori Murgh",
+              "variant": "(Half)",
+              "price": "₹390"
+            },
+            {
+              "name": "Murgh Tangri",
+              "price": "₹390"
+            },
+            {
+              "name": "Cheesy Lamb Seekh Kebab",
+              "price": "₹480"
+            },
+            {
+              "name": "Rayalu Vepudu",
+              "price": "₹460"
+            },
+            {
+              "name": "Deep Fried Nethili",
+              "price": "₹450"
+            },
+            {
+              "name": "Grilled Fish",
+              "price": "₹480"
+            },
+            {
+              "name": "Masala Fried Fish",
+              "price": "₹480"
+            },
+            {
+              "name": "Pepper Fry",
+              "variant": "(Chicken / Mutton / Prawns)",
+              "price": "₹390 / ₹480 / ₹460"
+            },
+            {
+              "name": "Mutton Kheema Balls Fry",
+              "price": "₹480"
+            },
+            {
+              "name": "Chicken Lollipop",
+              "price": "₹390"
+            },
+            {
+              "name": "Kozhi Milagu Pirattal",
+              "price": "₹390"
+            },
+            {
+              "name": "Guntur Kozhi",
+              "price": "₹390"
+            },
+            {
+              "name": "Chicken / Prawn / Calamari Sixtyfive",
+              "price": "₹390 / ₹460 / ₹460"
+            },
+            {
+              "name": "Gun Powdered Chicken",
+              "price": "₹390"
+            },
+            {
+              "name": "Choice of Eggs",
+              "variant": "(Fried / Boiled / Burji)",
+              "price": "₹200"
+            },
+            {
+              "name": "Omelette",
+              "variant": "(Regular / Cheese)",
+              "price": "₹200 / ₹280"
+            }
+          ]
+        },
+        {
+          "key": "pasta",
+          "label": "Pasta",
+          "items": [
+            {
+              "groupLabel": "Choose your own pasta — Penne or Spaghetti"
+            },
+            {
+              "name": "Vegetarian",
+              "price": "₹390"
+            },
+            {
+              "name": "Chicken",
+              "price": "₹450"
+            },
+            {
+              "name": "Prawns",
+              "price": "₹490"
+            },
+            {
+              "groupLabel": "Choose your sauce — Pesto / Alfredo / Spicy Napoletana"
+            },
+            {
+              "groupLabel": "Wraps"
+            },
+            {
+              "name": "Paneer Tikka / Sichuan Paneer Wrap",
+              "price": "₹390"
+            },
+            {
+              "name": "Murgh Tikka / Sichuan Chicken Wrap",
+              "price": "₹440"
+            },
+            {
+              "groupLabel": "Platter"
+            },
+            {
+              "name": "Veg Platter",
+              "price": "₹600"
+            },
+            {
+              "name": "Non-Veg Platter",
+              "price": "₹800"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
