@@ -10,6 +10,8 @@
   --border:rgba(75,41,26,.18);
   --font-display:'Playfair Display',serif;
   --font-body:'Poppins',sans-serif;
+  --input-bg:#ffffff;
+  --input-ink:#1c1410;
   --green:#2f8f4e;
   --green-soft:#e7f6ec;
   --red:#c0392b;
@@ -139,6 +141,8 @@ body:has(.editor[data-restaurant="southern-station"]){
   --border:rgba(184,158,120,.28);
   --font-display:'Anton',sans-serif;
   --font-body:'Oswald',sans-serif;
+  --input-bg:#1a1613;
+  --input-ink:#f3ead9;
 }
 
 /* Southern Station design system: cream + orange, Playfair/Poppins */
@@ -152,6 +156,8 @@ body:has(.editor[data-restaurant="southern-station"]){
   --border:rgba(75,41,26,.18);
   --font-display:'Playfair Display',serif;
   --font-body:'Poppins',sans-serif;
+  --input-bg:#ffffff;
+  --input-ink:#1c1410;
 }
 
 .editor-topbar{
@@ -323,8 +329,8 @@ body:has(.editor[data-restaurant="southern-station"]){
   font-family:var(--font-body);
   font-weight:600;
   font-size:.82rem;
-  background:var(--bg);
-  color:var(--ink);
+  background:var(--input-bg);
+  color:var(--input-ink);
 }
 
 .item-row{
@@ -344,10 +350,10 @@ body:has(.editor[data-restaurant="southern-station"]){
   border-radius:4px;
   font-family:var(--font-body);
   font-size:.82rem;
-  background:#fff;
-  color:#1c1410;
+  background:var(--input-bg);
+  color:var(--input-ink);
   outline:none;
-  transition:border-color .15s;
+  transition:border-color .15s,background .15s,color .15s;
 }
 .item-row input:focus{ border-color:var(--accent); }
 .input-name{ flex:2 1 150px; }
