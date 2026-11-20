@@ -315,9 +315,29 @@ body:has(.editor[data-restaurant="southern-station"]){
 }
 .btn-delete:hover{ background:#f6d4cf; }
 
+.drag-handle{
+  background:transparent;
+  border:1.5px solid var(--border);
+  border-radius:4px;
+  color:var(--ink-soft);
+  width:30px;
+  height:30px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:.95rem;
+  cursor:grab;
+  touch-action:none;
+  user-select:none;
+  flex:0 0 auto;
+  padding:0;
+}
+.drag-handle:hover{ border-color:var(--accent); color:var(--accent); }
+.drag-handle:active{ cursor:grabbing; }
+
 .group-row{
   display:grid;
-  grid-template-columns:1fr 30px;
+  grid-template-columns:30px 1fr 30px;
   align-items:center;
   gap:6px;
   margin-bottom:8px;
@@ -338,7 +358,7 @@ body:has(.editor[data-restaurant="southern-station"]){
 
 .item-row{
   display:grid;
-  grid-template-columns:2fr 2fr 1fr 3fr 30px;
+  grid-template-columns:30px 2fr 2fr 1fr 3fr 30px;
   align-items:center;
   gap:6px;
   margin-bottom:8px;
@@ -418,14 +438,16 @@ body:has(.editor[data-restaurant="southern-station"]){
   .restaurant-picker button{ flex:1; text-align:center; }
   .topbar-actions{ width:100%; }
   .topbar-actions .btn{ flex:1; }
-  .cat-card-header{ align-items:flex-start; }
-  .cat-label-input{ flex:1 1 100%; }
+  .cat-card-header{ align-items:center; }
   .btn-delete{ flex:1 1 100%; text-align:center; }
   .item-row{
     grid-template-columns:1fr;
     position:relative;
-    padding-right:44px;
+    padding-top:44px;
+    padding-left:12px;
+    padding-right:12px;
   }
+  .item-row .drag-handle{ position:absolute; top:8px; left:8px; }
   .item-row .btn-x{
     position:absolute;
     top:8px;
@@ -435,8 +457,11 @@ body:has(.editor[data-restaurant="southern-station"]){
   .group-row{
     grid-template-columns:1fr;
     position:relative;
-    padding-right:44px;
+    padding-top:44px;
+    padding-left:12px;
+    padding-right:12px;
   }
+  .group-row .drag-handle{ position:absolute; top:8px; left:8px; }
   .group-row .btn-x{
     position:absolute;
     top:8px;

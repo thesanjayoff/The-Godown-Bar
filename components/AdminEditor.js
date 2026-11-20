@@ -1,12 +1,186 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
+import {
+  DndContext,
+  closestCenter,
+  PointerSensor,
+  TouchSensor,
+  useSensor,
+  useSensors,
+} from '@dnd-kit/core';
+import {
+  SortableContext,
+  verticalListSortingStrategy,
+  useSortable,
+  arrayMove,
+} from '@dnd-kit/sortable';
+import { CSS } from '@dnd-kit/utilities';
 import '../app/admin/admin.css';
 
 const RESTAURANTS = [
   { slug: 'godown-bar', label: 'The Godown Bar' },
   { slug: 'southern-station', label: 'Southern Station' },
 ];
+
+function DragHandle({ attributes, listeners, extraClass }) {
+  return (
+    <button
+      type="button"
+      className={'drag-handle' + (extraClass ? ' ' + extraClass : '')}
+      aria-label="Drag to reorder"
+      {...attributes}
+      {...listeners}
+    >
+      ⠿
+    </button>
+  );
+}
+
+function SortableRow({ id, item, catIndex, itemIndex, updateItem, deleteItem }) {
+  const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
+    id,
+  });
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+    opacity: isDragging ? 0.5 : 1,
+    zIndex: isDragging ? 10 : 'auto',
+    position: 'relative',
+  };
+
+  if (item.groupLabel !== undefined) {
+    return (
+      <div ref={setNodeRef} style={style} className="group-row">
+        <DragHandle attributes={attributes} listeners={listeners} extraClass="drag-handle-row" />
+        <input
+          className="group-input"
+          value={item.groupLabel}
+          placeholder="Sub-heading"
+          onChange={(e) => updateItem(catIndex, itemIndex, 'groupLabel', e.target.value)}
+        />
+        <button onClick={() => deleteItem(catIndex, itemIndex)} className="btn-x">
+          ✕
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <div ref={setNodeRef} style={style} className="item-row">
+      <DragHandle attributes={attributes} listeners={listeners} extraClass="drag-handle-row" />
+      <input
+        className="input-name"
+        value={item.name || ''}
+        placeholder="Name"
+        onChange={(e) => updateItem(catIndex, itemIndex, 'name', e.target.value)}
+      />
+      <input
+        className="input-variant"
+        value={item.variant || ''}
+        placeholder="Variant (optional)"
+        onChange={(e) => updateItem(catIndex, itemIndex, 'variant', e.target.value)}
+      />
+      <input
+        className="input-price"
+        value={item.price || ''}
+        placeholder="Price"
+        onChange={(e) => updateItem(catIndex, itemIndex, 'price', e.target.value)}
+      />
+      <input
+        className="input-desc"
+        value={item.desc || ''}
+        placeholder="Description (optional)"
+        onChange={(e) => updateItem(catIndex, itemIndex, 'desc', e.target.value)}
+      />
+      <button onClick={() => deleteItem(catIndex, itemIndex)} className="btn-x">
+        ✕
+      </button>
+    </div>
+  );
+}
+
+function SortableCategoryCard({
+  cat,
+  catIndex,
+  updateCategory,
+  deleteCategory,
+  addItem,
+  addSubheading,
+  updateItem,
+  deleteItem,
+  reorderItems,
+}) {
+  const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
+    id: cat.key,
+  });
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+    opacity: isDragging ? 0.6 : 1,
+    zIndex: isDragging ? 10 : 'auto',
+  };
+
+  const itemSensors = useSensors(
+    useSensor(PointerSensor, { activationConstraint: { distance: 8 } }),
+    useSensor(TouchSensor, { activationConstraint: { delay: 150, tolerance: 5 } })
+  );
+
+  const itemIds = cat.items.map((_, i) => `${cat.key}-item-${i}`);
+
+  function handleItemDragEnd(event) {
+    const { active, over } = event;
+    if (!over || active.id === over.id) return;
+    const oldIndex = itemIds.indexOf(active.id);
+    const newIndex = itemIds.indexOf(over.id);
+    reorderItems(catIndex, oldIndex, newIndex);
+  }
+
+  return (
+    <div ref={setNodeRef} style={style} className="cat-card">
+      <div className="cat-card-header">
+        <DragHandle attributes={attributes} listeners={listeners} />
+        <input
+          className="cat-label-input"
+          value={cat.label}
+          onChange={(e) => updateCategory(catIndex, (c) => (c.label = e.target.value))}
+        />
+        <button onClick={() => deleteCategory(catIndex)} className="btn-delete">
+          Delete category
+        </button>
+      </div>
+
+      <DndContext
+        sensors={itemSensors}
+        collisionDetection={closestCenter}
+        onDragEnd={handleItemDragEnd}
+      >
+        <SortableContext items={itemIds} strategy={verticalListSortingStrategy}>
+          {cat.items.map((item, itemIndex) => (
+            <SortableRow
+              key={itemIds[itemIndex]}
+              id={itemIds[itemIndex]}
+              item={item}
+              catIndex={catIndex}
+              itemIndex={itemIndex}
+              updateItem={updateItem}
+              deleteItem={deleteItem}
+            />
+          ))}
+        </SortableContext>
+      </DndContext>
+
+      <div className="cat-card-footer">
+        <button onClick={() => addItem(catIndex)} className="btn-add">
+          + Add item
+        </button>
+        <button onClick={() => addSubheading(catIndex)} className="btn-add">
+          + Add sub-heading
+        </button>
+      </div>
+    </div>
+  );
+}
 
 export default function AdminEditor() {
   const [slug, setSlug] = useState(RESTAURANTS[0].slug);
@@ -16,6 +190,11 @@ export default function AdminEditor() {
   const [saving, setSaving] = useState(false);
   const [status, setStatus] = useState('');
   const [statusOk, setStatusOk] = useState(true);
+
+  const categorySensors = useSensors(
+    useSensor(PointerSensor, { activationConstraint: { distance: 8 } }),
+    useSensor(TouchSensor, { activationConstraint: { delay: 150, tolerance: 5 } })
+  );
 
   const load = useCallback(async (s) => {
     setLoading(true);
@@ -87,6 +266,12 @@ export default function AdminEditor() {
     });
   }
 
+  function addSubheading(catIndex) {
+    updateCategory(catIndex, (c) => {
+      c.items.push({ groupLabel: 'New sub-heading' });
+    });
+  }
+
   function deleteItem(catIndex, itemIndex) {
     updateCategory(catIndex, (c) => {
       c.items.splice(itemIndex, 1);
@@ -96,6 +281,22 @@ export default function AdminEditor() {
   function updateItem(catIndex, itemIndex, field, value) {
     updateCategory(catIndex, (c) => {
       c.items[itemIndex][field] = value;
+    });
+  }
+
+  function reorderItems(catIndex, oldIndex, newIndex) {
+    updateCategory(catIndex, (c) => {
+      c.items = arrayMove(c.items, oldIndex, newIndex);
+    });
+  }
+
+  function handleCategoryDragEnd(event) {
+    const { active, over } = event;
+    if (!over || active.id === over.id) return;
+    updateTab((t) => {
+      const oldIndex = t.categories.findIndex((c) => c.key === active.id);
+      const newIndex = t.categories.findIndex((c) => c.key === over.id);
+      t.categories = arrayMove(t.categories, oldIndex, newIndex);
     });
   }
 
@@ -138,80 +339,31 @@ export default function AdminEditor() {
         </div>
       ) : null}
 
-      {tab.categories.map((cat, catIndex) => (
-        <div key={cat.key} className="cat-card">
-          <div className="cat-card-header">
-            <input
-              className="cat-label-input"
-              value={cat.label}
-              onChange={(e) => updateCategory(catIndex, (c) => (c.label = e.target.value))}
+      <DndContext
+        sensors={categorySensors}
+        collisionDetection={closestCenter}
+        onDragEnd={handleCategoryDragEnd}
+      >
+        <SortableContext
+          items={tab.categories.map((c) => c.key)}
+          strategy={verticalListSortingStrategy}
+        >
+          {tab.categories.map((cat, catIndex) => (
+            <SortableCategoryCard
+              key={cat.key}
+              cat={cat}
+              catIndex={catIndex}
+              updateCategory={updateCategory}
+              deleteCategory={deleteCategory}
+              addItem={addItem}
+              addSubheading={addSubheading}
+              updateItem={updateItem}
+              deleteItem={deleteItem}
+              reorderItems={reorderItems}
             />
-            <button onClick={() => deleteCategory(catIndex)} className="btn-delete">
-              Delete category
-            </button>
-          </div>
-
-          {cat.items.map((item, itemIndex) =>
-            item.groupLabel !== undefined ? (
-              <div key={itemIndex} className="group-row">
-                <input
-                  className="group-input"
-                  value={item.groupLabel}
-                  placeholder="Sub-heading"
-                  onChange={(e) => updateItem(catIndex, itemIndex, 'groupLabel', e.target.value)}
-                />
-                <button onClick={() => deleteItem(catIndex, itemIndex)} className="btn-x">
-                  ✕
-                </button>
-              </div>
-            ) : (
-              <div key={itemIndex} className="item-row">
-                <input
-                  className="input-name"
-                  value={item.name || ''}
-                  placeholder="Name"
-                  onChange={(e) => updateItem(catIndex, itemIndex, 'name', e.target.value)}
-                />
-                <input
-                  className="input-variant"
-                  value={item.variant || ''}
-                  placeholder="Variant (optional)"
-                  onChange={(e) => updateItem(catIndex, itemIndex, 'variant', e.target.value)}
-                />
-                <input
-                  className="input-price"
-                  value={item.price || ''}
-                  placeholder="Price"
-                  onChange={(e) => updateItem(catIndex, itemIndex, 'price', e.target.value)}
-                />
-                <input
-                  className="input-desc"
-                  value={item.desc || ''}
-                  placeholder="Description (optional)"
-                  onChange={(e) => updateItem(catIndex, itemIndex, 'desc', e.target.value)}
-                />
-                <button onClick={() => deleteItem(catIndex, itemIndex)} className="btn-x">
-                  ✕
-                </button>
-              </div>
-            )
-          )}
-
-          <div className="cat-card-footer">
-            <button onClick={() => addItem(catIndex)} className="btn-add">
-              + Add item
-            </button>
-            <button
-              onClick={() =>
-                updateCategory(catIndex, (c) => c.items.push({ groupLabel: 'New sub-heading' }))
-              }
-              className="btn-add"
-            >
-              + Add sub-heading
-            </button>
-          </div>
-        </div>
-      ))}
+          ))}
+        </SortableContext>
+      </DndContext>
 
       <button onClick={addCategory} className="btn-add-category">
         + Add category
