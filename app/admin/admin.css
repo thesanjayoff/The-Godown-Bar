@@ -321,6 +321,7 @@ body:has(.editor[data-restaurant="southern-station"]){
   align-items:center;
   gap:6px;
   margin-bottom:8px;
+  padding:8px;
 }
 .group-input{
   flex:1;
