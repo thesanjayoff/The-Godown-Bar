@@ -100,7 +100,7 @@ export default function AdminEditor() {
   }
 
   return (
-    <div className="editor">
+    <div className="editor" data-restaurant={slug}>
       <div className="editor-topbar">
         <div className="restaurant-picker">
           {RESTAURANTS.map((r) => (

@@ -1,13 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700&family=Anton&display=swap');
 
 :root{
-  --cream:#fff7d6;
-  --card:#fffdf3;
-  --orange:#f68e1f;
-  --orange-soft:rgba(246,142,31,.12);
-  --badge:#4b291a;
-  --desc:#6e5240;
+  --bg:#fff7d6;
+  --surface:#fffdf3;
+  --accent:#f68e1f;
+  --accent-soft:rgba(246,142,31,.12);
+  --ink:#4b291a;
+  --ink-soft:#6e5240;
   --border:rgba(75,41,26,.18);
+  --font-display:'Playfair Display',serif;
+  --font-body:'Poppins',sans-serif;
   --green:#2f8f4e;
   --green-soft:#e7f6ec;
   --red:#c0392b;
@@ -16,13 +18,13 @@
 *{box-sizing:border-box;}
 html,body{margin:0;padding:0;}
 body{
-  background:var(--cream);
-  font-family:'Poppins',sans-serif;
-  color:var(--badge);
+  background:var(--bg);
+  font-family:var(--font-body);
+  color:var(--ink);
   -webkit-font-smoothing:antialiased;
 }
 
-/* ---------- login ---------- */
+/* ---------- login (neutral — no restaurant chosen yet) ---------- */
 .login-wrap{
   min-height:100vh;
   display:flex;
@@ -31,7 +33,7 @@ body{
   padding:20px;
 }
 .login-card{
-  background:var(--card);
+  background:var(--surface);
   border:1px solid var(--border);
   padding:40px 36px;
   border-radius:4px;
@@ -45,7 +47,7 @@ body{
 .login-icon{
   width:48px;
   height:48px;
-  background:var(--orange);
+  background:var(--accent);
   color:#fff;
   display:flex;
   align-items:center;
@@ -61,11 +63,11 @@ body{
   font-size:1.5rem;
   font-weight:600;
   letter-spacing:.01em;
-  color:var(--badge);
+  color:var(--ink);
 }
 .login-card p.sub{
   margin:-10px 0 4px;
-  color:var(--desc);
+  color:var(--ink-soft);
   font-size:.85rem;
 }
 .login-card input{
@@ -77,9 +79,9 @@ body{
   outline:none;
   transition:border-color .15s;
   background:#fff;
-  color:var(--badge);
+  color:var(--ink);
 }
-.login-card input:focus{ border-color:var(--orange); }
+.login-card input:focus{ border-color:var(--accent); }
 .login-card .error{
   color:var(--red);
   background:var(--red-soft);
@@ -94,7 +96,7 @@ body{
   font-weight:600;
   letter-spacing:.08em;
   text-transform:uppercase;
-  background:var(--orange);
+  background:var(--accent);
   color:#fff;
   border:none;
   border-radius:4px;
@@ -105,19 +107,47 @@ body{
 .login-card button:disabled{ opacity:.6; cursor:default; }
 .login-card button:hover:not(:disabled){ opacity:.9; }
 
-/* ---------- editor shell ---------- */
+/* ---------- editor shell — themed per restaurant ---------- */
 .editor{
   max-width:780px;
   margin:0 auto;
   padding:28px 16px 100px;
+  font-family:var(--font-body);
 }
+
+/* Godown Bar design system: black + gold, Anton/Oswald */
+.editor[data-restaurant="godown-bar"]{
+  --bg:#000000;
+  --surface:#141110;
+  --accent:#b89e78;
+  --accent-soft:rgba(184,158,120,.14);
+  --ink:#f3ead9;
+  --ink-soft:rgba(243,234,217,.65);
+  --border:rgba(184,158,120,.28);
+  --font-display:'Anton',sans-serif;
+  --font-body:'Oswald',sans-serif;
+}
+
+/* Southern Station design system: cream + orange, Playfair/Poppins */
+.editor[data-restaurant="southern-station"]{
+  --bg:#fff7d6;
+  --surface:#fffdf3;
+  --accent:#f68e1f;
+  --accent-soft:rgba(246,142,31,.12);
+  --ink:#4b291a;
+  --ink-soft:#6e5240;
+  --border:rgba(75,41,26,.18);
+  --font-display:'Playfair Display',serif;
+  --font-body:'Poppins',sans-serif;
+}
+
 .editor-topbar{
   display:flex;
   justify-content:space-between;
   align-items:center;
   flex-wrap:wrap;
   gap:14px;
-  background:var(--card);
+  background:var(--surface);
   border:1px solid var(--border);
   border-radius:4px;
   padding:14px 16px;
@@ -125,40 +155,42 @@ body{
   position:sticky;
   top:16px;
   z-index:50;
-  box-shadow:0 8px 24px rgba(75,41,26,.08);
+  box-shadow:0 8px 24px rgba(0,0,0,.08);
+  transition:background .2s,border-color .2s;
 }
 .restaurant-picker{
   display:flex;
   flex-wrap:wrap;
   gap:6px;
-  background:var(--cream);
+  background:var(--bg);
   padding:4px;
   border-radius:4px;
+  border:1px solid var(--border);
 }
 .restaurant-picker button{
   padding:8px 14px;
   border-radius:3px;
   border:none;
   background:transparent;
-  font-family:'Poppins',sans-serif;
+  font-family:var(--font-body);
   font-size:.78rem;
   font-weight:600;
   letter-spacing:.04em;
   text-transform:uppercase;
-  color:var(--desc);
+  color:var(--ink-soft);
   cursor:pointer;
   transition:background .15s,color .15s;
   white-space:nowrap;
 }
 .restaurant-picker button.active{
-  background:var(--orange);
+  background:var(--accent);
   color:#fff;
 }
 .topbar-actions{ display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
 .btn{
   padding:9px 16px;
   border-radius:4px;
-  font-family:'Poppins',sans-serif;
+  font-family:var(--font-body);
   font-size:.78rem;
   font-weight:600;
   letter-spacing:.04em;
@@ -169,10 +201,10 @@ body{
   white-space:nowrap;
 }
 .btn:disabled{ opacity:.6; cursor:default; }
-.btn-save{ background:var(--orange); color:#fff; }
+.btn-save{ background:var(--accent); color:#fff; }
 .btn-save:hover:not(:disabled){ opacity:.9; }
-.btn-ghost{ background:var(--card); color:var(--desc); border-color:var(--border); }
-.btn-ghost:hover{ background:var(--cream); }
+.btn-ghost{ background:var(--surface); color:var(--ink-soft); border-color:var(--border); }
+.btn-ghost:hover{ background:var(--bg); }
 .status-msg{
   font-size:.82rem;
   font-weight:600;
@@ -187,19 +219,19 @@ body{
   padding:7px 16px;
   border-radius:999px;
   border:1.5px solid var(--border);
-  background:var(--card);
-  font-family:'Poppins',sans-serif;
+  background:var(--surface);
+  font-family:var(--font-body);
   font-size:.75rem;
   font-weight:600;
   letter-spacing:.04em;
   text-transform:uppercase;
-  color:var(--desc);
+  color:var(--ink-soft);
   cursor:pointer;
 }
 .tab-picker button.active{
-  border-color:var(--orange);
-  background:var(--orange-soft);
-  color:var(--orange);
+  border-color:var(--accent);
+  background:var(--accent-soft);
+  color:var(--accent);
 }
 
 .loading-screen{
@@ -207,18 +239,19 @@ body{
   display:flex;
   align-items:center;
   justify-content:center;
-  color:var(--desc);
+  color:var(--ink-soft);
   font-size:.95rem;
-  font-family:'Poppins',sans-serif;
+  font-family:var(--font-body);
 }
 
 /* ---------- category cards ---------- */
 .cat-card{
-  background:var(--card);
+  background:var(--surface);
   border:1px solid var(--border);
   border-radius:4px;
   padding:18px;
   margin-bottom:16px;
+  transition:background .2s,border-color .2s;
 }
 .cat-card-header{
   display:flex;
@@ -231,19 +264,19 @@ body{
 .cat-label-input{
   flex:1 1 160px;
   min-width:0;
-  font-family:'Playfair Display',serif;
+  font-family:var(--font-display);
   font-size:1.05rem;
   font-weight:600;
   padding:8px 10px;
   border:1.5px solid transparent;
   border-radius:4px;
   background:transparent;
-  color:var(--badge);
+  color:var(--ink);
   transition:border-color .15s,background .15s;
 }
 .cat-label-input:hover,.cat-label-input:focus{
   border-color:var(--border);
-  background:var(--cream);
+  background:var(--bg);
   outline:none;
 }
 .btn-delete{
@@ -252,7 +285,7 @@ body{
   border:none;
   border-radius:4px;
   padding:7px 12px;
-  font-family:'Poppins',sans-serif;
+  font-family:var(--font-body);
   font-size:.72rem;
   font-weight:600;
   letter-spacing:.03em;
@@ -274,11 +307,11 @@ body{
   padding:8px 10px;
   border:1.5px solid var(--border);
   border-radius:4px;
-  font-family:'Poppins',sans-serif;
+  font-family:var(--font-body);
   font-weight:600;
   font-size:.82rem;
-  background:var(--cream);
-  color:var(--badge);
+  background:var(--bg);
+  color:var(--ink);
 }
 
 .item-row{
@@ -290,20 +323,20 @@ body{
   border-radius:4px;
   transition:background .12s;
 }
-.item-row:hover{ background:var(--cream); }
+.item-row:hover{ background:var(--bg); }
 .item-row input{
   min-width:0;
   padding:8px 10px;
   border:1.5px solid var(--border);
   border-radius:4px;
-  font-family:'Poppins',sans-serif;
+  font-family:var(--font-body);
   font-size:.82rem;
   background:#fff;
-  color:var(--badge);
+  color:#1c1410;
   outline:none;
   transition:border-color .15s;
 }
-.item-row input:focus{ border-color:var(--orange); }
+.item-row input:focus{ border-color:var(--accent); }
 .input-name{ flex:2 1 150px; }
 .input-variant{ flex:2 1 130px; }
 .input-price{ flex:1 1 80px; }
@@ -334,30 +367,30 @@ body{
   border-radius:4px;
   border:1.5px dashed var(--border);
   background:transparent;
-  color:var(--desc);
-  font-family:'Poppins',sans-serif;
+  color:var(--ink-soft);
+  font-family:var(--font-body);
   font-size:.76rem;
   font-weight:600;
   letter-spacing:.02em;
   cursor:pointer;
 }
-.btn-add:hover{ border-color:var(--orange); color:var(--orange); background:var(--orange-soft); }
+.btn-add:hover{ border-color:var(--accent); color:var(--accent); background:var(--accent-soft); }
 
 .btn-add-category{
   width:100%;
   padding:14px;
   border-radius:4px;
   border:1.5px dashed var(--border);
-  background:var(--card);
-  color:var(--desc);
-  font-family:'Poppins',sans-serif;
+  background:var(--surface);
+  color:var(--ink-soft);
+  font-family:var(--font-body);
   font-size:.85rem;
   font-weight:600;
   letter-spacing:.03em;
   text-transform:uppercase;
   cursor:pointer;
 }
-.btn-add-category:hover{ border-color:var(--orange); color:var(--orange); background:var(--orange-soft); }
+.btn-add-category:hover{ border-color:var(--accent); color:var(--accent); background:var(--accent-soft); }
 
 /* ---------- mobile ---------- */
 @media (max-width:480px){
