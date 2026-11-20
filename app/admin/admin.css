@@ -22,6 +22,15 @@ body{
   font-family:var(--font-body);
   color:var(--ink);
   -webkit-font-smoothing:antialiased;
+  transition:background .2s,color .2s;
+}
+body:has(.editor[data-restaurant="godown-bar"]){
+  background:#000000;
+  color:#f3ead9;
+}
+body:has(.editor[data-restaurant="southern-station"]){
+  background:#fff7d6;
+  color:#4b291a;
 }
 
 /* ---------- login (neutral — no restaurant chosen yet) ---------- */
@@ -113,6 +122,10 @@ body{
   margin:0 auto;
   padding:28px 16px 100px;
   font-family:var(--font-body);
+  background:var(--bg);
+  color:var(--ink);
+  min-height:100vh;
+  transition:background .2s,color .2s;
 }
 
 /* Godown Bar design system: black + gold, Anton/Oswald */
