@@ -440,32 +440,26 @@ body:has(.editor[data-restaurant="southern-station"]){
   .topbar-actions .btn{ flex:1; }
   .cat-card-header{ align-items:center; }
   .btn-delete{ flex:1 1 100%; text-align:center; }
+
   .item-row{
-    grid-template-columns:1fr;
-    position:relative;
-    padding-top:44px;
-    padding-left:12px;
-    padding-right:12px;
+    grid-template-columns:26px 1fr 1fr 26px;
+    grid-template-areas:
+      "handle name name x"
+      ".      variant price ."
+      ".      desc desc .";
+    row-gap:6px;
+    padding:8px 6px;
   }
-  .item-row .drag-handle{ position:absolute; top:8px; left:8px; }
-  .item-row .btn-x{
-    position:absolute;
-    top:8px;
-    right:8px;
-    justify-self:auto;
-  }
+  .item-row .drag-handle{ grid-area:handle; width:26px; height:26px; font-size:.85rem; }
+  .item-row .input-name{ grid-area:name; }
+  .item-row .input-variant{ grid-area:variant; }
+  .item-row .input-price{ grid-area:price; }
+  .item-row .input-desc{ grid-area:desc; }
+  .item-row .btn-x{ grid-area:x; width:26px; height:26px; justify-self:end; }
+
   .group-row{
-    grid-template-columns:1fr;
-    position:relative;
-    padding-top:44px;
-    padding-left:12px;
-    padding-right:12px;
+    grid-template-columns:26px 1fr 26px;
   }
-  .group-row .drag-handle{ position:absolute; top:8px; left:8px; }
-  .group-row .btn-x{
-    position:absolute;
-    top:8px;
-    right:8px;
-    justify-self:auto;
-  }
+  .group-row .drag-handle{ width:26px; height:26px; font-size:.85rem; }
+  .group-row .btn-x{ width:26px; height:26px; }
 }
