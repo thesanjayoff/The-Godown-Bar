@@ -316,7 +316,9 @@ body:has(.editor[data-restaurant="southern-station"]){
 .btn-delete:hover{ background:#f6d4cf; }
 
 .group-row{
-  display:flex;
+  display:grid;
+  grid-template-columns:1fr 30px;
+  align-items:center;
   gap:6px;
   margin-bottom:8px;
 }
@@ -334,10 +336,11 @@ body:has(.editor[data-restaurant="southern-station"]){
 }
 
 .item-row{
-  display:flex;
+  display:grid;
+  grid-template-columns:2fr 2fr 1fr 3fr 30px;
+  align-items:center;
   gap:6px;
   margin-bottom:8px;
-  flex-wrap:wrap;
   padding:8px;
   border-radius:4px;
   transition:background .12s;
@@ -356,11 +359,6 @@ body:has(.editor[data-restaurant="southern-station"]){
   transition:border-color .15s,background .15s,color .15s;
 }
 .item-row input:focus{ border-color:var(--accent); }
-.input-name{ flex:2 1 150px; }
-.input-variant{ flex:2 1 130px; }
-.input-price{ flex:1 1 80px; }
-.input-desc{ flex:3 1 190px; }
-
 .btn-x{
   background:var(--red-soft);
   color:var(--red);
@@ -368,10 +366,10 @@ body:has(.editor[data-restaurant="southern-station"]){
   border-radius:4px;
   width:30px;
   height:30px;
-  flex:0 0 auto;
   font-size:.85rem;
   cursor:pointer;
   line-height:1;
+  justify-self:center;
 }
 .btn-x:hover{ background:#f6d4cf; }
 
@@ -422,6 +420,8 @@ body:has(.editor[data-restaurant="southern-station"]){
   .cat-card-header{ align-items:flex-start; }
   .cat-label-input{ flex:1 1 100%; }
   .btn-delete{ flex:1 1 100%; text-align:center; }
-  .item-row{ flex-direction:column; }
-  .item-row input{ flex:1 1 100%; }
+  .item-row{ grid-template-columns:1fr; }
+  .item-row .btn-x{ justify-self:stretch; width:100%; }
+  .group-row{ grid-template-columns:1fr; }
+  .group-row .btn-x{ justify-self:stretch; width:100%; }
 }
