@@ -314,6 +314,7 @@ body:has(.editor[data-restaurant="southern-station"]){
   flex:0 0 auto;
 }
 .btn-delete:hover{ background:#f6d4cf; }
+.btn-delete-short{ display:none; }
 
 .drag-handle{
   background:transparent;
@@ -438,8 +439,11 @@ body:has(.editor[data-restaurant="southern-station"]){
   .restaurant-picker button{ flex:1; text-align:center; }
   .topbar-actions{ width:100%; }
   .topbar-actions .btn{ flex:1; }
-  .cat-card-header{ align-items:center; }
-  .btn-delete{ flex:1 1 100%; text-align:center; }
+  .cat-card-header{ align-items:center; flex-wrap:nowrap; }
+  .cat-label-input{ flex:1 1 auto; min-width:0; }
+  .btn-delete{ flex:0 0 auto; padding:7px 10px; }
+  .btn-delete-full{ display:none; }
+  .btn-delete-short{ display:inline; }
 
   .item-row{
     grid-template-columns:26px 1fr 1fr 26px;

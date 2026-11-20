@@ -146,7 +146,8 @@ function SortableCategoryCard({
           onChange={(e) => updateCategory(catIndex, (c) => (c.label = e.target.value))}
         />
         <button onClick={() => deleteCategory(catIndex)} className="btn-delete">
-          Delete category
+          <span className="btn-delete-full">Delete category</span>
+          <span className="btn-delete-short">Delete</span>
         </button>
       </div>
 
