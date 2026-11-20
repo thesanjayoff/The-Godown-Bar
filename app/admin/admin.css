@@ -421,8 +421,26 @@ body:has(.editor[data-restaurant="southern-station"]){
   .cat-card-header{ align-items:flex-start; }
   .cat-label-input{ flex:1 1 100%; }
   .btn-delete{ flex:1 1 100%; text-align:center; }
-  .item-row{ grid-template-columns:1fr; }
-  .item-row .btn-x{ justify-self:stretch; width:100%; }
-  .group-row{ grid-template-columns:1fr; }
-  .group-row .btn-x{ justify-self:stretch; width:100%; }
+  .item-row{
+    grid-template-columns:1fr;
+    position:relative;
+    padding-right:44px;
+  }
+  .item-row .btn-x{
+    position:absolute;
+    top:8px;
+    right:8px;
+    justify-self:auto;
+  }
+  .group-row{
+    grid-template-columns:1fr;
+    position:relative;
+    padding-right:44px;
+  }
+  .group-row .btn-x{
+    position:absolute;
+    top:8px;
+    right:8px;
+    justify-self:auto;
+  }
 }
